@@ -4,25 +4,35 @@
 #include <cmath>
 
 using namespace std;
-// int simon(int);
+int simon(int);
+int chapter2();
+int hwchapter2();
 
-// int main()
-// {
-//     int carrots;
-//     int newC = simon(10);
-//     cin >> carrots;
-//     cout << "I have " << carrots << " carrots." << endl;
-//     double newCarrots = sqrt(newC - 1);
-//     cout << "Now I have " << newCarrots << " carrots" << endl;
-//     return 0;
-// }
+int main()
+{
+    cout << "Current Running" << endl;
+    hwchapter2();
+    return 0;
+}
 
-// int simon(int n)
-// {
-//     return n * 20;
-// }
 
-int main() //homework chapter 2
+int chapter2()
+{
+    int carrots;
+    int newC = simon(10);
+    cin >> carrots;
+    cout << "I have " << carrots << " carrots." << endl;
+    double newCarrots = sqrt(newC - 1);
+    cout << "Now I have " << newCarrots << " carrots" << endl;
+    return 0;
+}
+
+int simon(int n)
+{
+    return n * 20;
+}
+
+int hwchapter2() //homework chapter 2
 {
     int inputTemp;
     cout << "Please enter a Celsius Value: " << endl;
