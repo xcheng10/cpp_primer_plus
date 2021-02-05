@@ -19,7 +19,7 @@ int main()
 
 int simon(int n)
 {
-    return n * 18;
+    return n * 20;
 }
 
 
