@@ -4,25 +4,33 @@
 #include <cmath>
 
 using namespace std;
-int simon(int);
+// int simon(int);
 
-int main()
+// int main()
+// {
+//     int carrots;
+//     int newC = simon(10);
+//     cin >> carrots;
+//     cout << "I have " << carrots << " carrots." << endl;
+//     double newCarrots = sqrt(newC - 1);
+//     cout << "Now I have " << newCarrots << " carrots" << endl;
+//     return 0;
+// }
+
+// int simon(int n)
+// {
+//     return n * 20;
+// }
+
+int main() //homework chapter 2
 {
-    int carrots;
-    int newC = simon(10);
-    cin >> carrots;
-    cout << "I have " << carrots << " carrots." << endl;
-    double newCarrots = sqrt(newC - 1);
-    cout << "Now I have " << newCarrots << " carrots" << endl;
+    int inputTemp;
+    cout << "Please enter a Celsius Value: " << endl;
+    cin >> inputTemp;
+    float outputTemp = inputTemp * 1.8 + 32.0;
+    cout << inputTemp << " degrees Celsius is " << outputTemp << " degrees Fahrenheit." << endl;
     return 0;
 }
-
-int simon(int n)
-{
-    return n * 20;
-}
-
-
 
 
 class MyLinkedList {
