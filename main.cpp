@@ -4,39 +4,22 @@
 #include <cmath>
 
 using namespace std;
-<<<<<<< HEAD
-void simon(int);
-=======
 int simon(int);
->>>>>>> fa78dc2... first commit
 
 int main()
 {
     int carrots;
-<<<<<<< HEAD
-    simon(10);
-    cin >> carrots;
-    cout << "I have " << carrots << " carrots." << endl;
-    double newCarrots = sqrt(carrots - 1);
-=======
     int newC = simon(10);
     cin >> carrots;
     cout << "I have " << carrots << " carrots." << endl;
     double newCarrots = sqrt(newC - 1);
->>>>>>> fa78dc2... first commit
     cout << "Now I have " << newCarrots << " carrots" << endl;
     return 0;
 }
 
-<<<<<<< HEAD
-void simon(int n)
-{
-    cout << "A la la " << n << " times";
-=======
 int simon(int n)
 {
     return n * 12;
->>>>>>> fa78dc2... first commit
 }
 
 
