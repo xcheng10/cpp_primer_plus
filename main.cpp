@@ -1,17 +1,20 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <cmath>
 
 using namespace std;
 int simon(int);
 int chapter2();
 int hwchapter2();
+void chapter4();
 
 int main()
 {
     cout << "Current Running" << endl;
-    hwchapter2();
+    // hwchapter2();
+    chapter4();
     return 0;
 }
 
@@ -35,12 +38,47 @@ int simon(int n)
 int hwchapter2() //homework chapter 2
 {
     int inputTemp;
+    const float fraction = 1.8;
     cout << "Please enter a Celsius Value: " << endl;
     cin >> inputTemp;
-    float outputTemp = inputTemp * 1.8 + 32.0;
+    float outputTemp = inputTemp * fraction + 32.0;
     cout << inputTemp << " degrees Celsius is " << outputTemp << " degrees Fahrenheit." << endl;
     return 0;
 }
+
+struct inflatable{
+    char name[20];
+    float volume;
+    double price;
+};
+
+
+void chapter4(){
+    // int arrayInput[10];
+    // arrayInput[0] = 0;
+    // int newArray[10] = {2,3,4,5};
+    // char fish[40] = "Bu bbl es";
+    // cout << arrayInput[2] << endl;
+    // cout << fish << endl;
+    // cout << strlen(fish) << endl;
+    // cout << sizeof(fish) << endl;
+    // const int ArSize = 20;
+    // char name[ArSize];
+    // char nameNew[ArSize];
+    // cout << "Input" << endl;
+    // cin.getline(name, ArSize);
+    // cout << "The input is: " << name << endl;
+    // string third_date = "Super Bowl";
+    // string first_date;
+    // first_date += third_date;
+    // cout << first_date << endl;
+    inflatable guest = {"Nice Nice", 1.88, 20.888888};
+    inflatable gift[100];
+    cout << guest.name << endl;
+    cout << gift[0].name << endl;
+    cout << gift[99].price << endl;
+}
+
 
 
 class MyLinkedList {
