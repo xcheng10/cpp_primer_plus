@@ -43,8 +43,8 @@ void hwchapter4();
 //     return 0;
 // }
 
-void chapter4()
-{
+// void chapter4()
+// {
     // int arrayInput[10];
     // arrayInput[0] = 0;
     // int newArray[10] = {2,3,4,5};
@@ -335,17 +335,17 @@ void chapter4()
     // cout << (* ppb + 1) -> year << endl; // What is the difference here
 
 // 数组的替代品
-    vector<int> vi; // zero-size array of int
-    vector<double> vd(10); // an array of 10 doubles
+    // vector<int> vi; // zero-size array of int
+    // vector<double> vd(10); // an array of 10 doubles
 
-    array<int, 5> ai;
-    array<double, 4> ab = {1.2,4.5,3.4};
-    array<double, 4> abb = ab; // array对象可以直接赋值，数组则需要逐个赋值
+    // array<int, 5> ai;
+    // array<double, 4> ab = {1.2,4.5,3.4};
+    // array<double, 4> abb = ab; // array对象可以直接赋值，数组则需要逐个赋值, but with fixed length
 
-    cout << ab[2] << " at " << &ab[2] << endl;
-    cout << abb[2] << " at " << &abb[2] << endl;
-    
-}
+    // cout << ab[2] << " at " << &ab[2] << endl;
+    // cout << abb[2] << " at " << &abb[2] << endl;
+
+//}
 
 // char * getname()
 // {
@@ -358,15 +358,47 @@ void chapter4()
 // }
 
 
-void hwchapter4()
+// void hwchapter4()
+// {
+    // array<int, 5> oddNums = {1,3,5,7,9};
+    // int * pt = &oddNums[0];
+    // cout << * (pt + 1) << endl;
+
+    // struct CandyBar
+    // {
+    //     string name;
+    //     double weight;
+    //     int calories;
+    // };
+
+    // CandyBar snack;
+    // CandyBar * pt = &snack;
+    // pt -> name = "Mocha Munch";
+    // snack.weight = 2.3;
+    // pt -> calories = 350;
+
+    // cout << pt -> name << "\n" << pt -> weight << "\n" << snack.calories << endl;
+
+    // CandyBar * pt = new CandyBar;
+    // pt -> name = "Mocha Munch";
+    // pt -> weight = 2.3;
+    // pt -> calories = 350;
+
+    // cout << pt -> name << "\n" << pt -> weight << "\n" << pt -> calories << endl;
+    // delete pt;
+
+//}
+
+void chapter5()
 {
+    cout << "Chapter 5.1" << endl;
 }
+
 
 
 int main()
 {
     cout << "Current Running" << endl;
-    chapter4();
-    hwchapter4();
+    chapter5();
     return 0;
 }

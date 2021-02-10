@@ -2,4 +2,7 @@
 C++ Primer Plus Notes and Homework
 
 Chapter 2 Homework Finished
-Chapter 4 Nots Finished
+Chapter 4 Notes
+Chapter 4 HW Finished
+Chapter 5 Notes
+
