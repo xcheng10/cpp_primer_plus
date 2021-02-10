@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <array>
 #include <string>
 #include <cstring>
 #include <cmath>
@@ -10,6 +11,8 @@ int simon(int);
 int chapter2();
 int hwchapter2();
 void chapter4();
+char * getname(void);
+void hwchapter4();
 
 
 
@@ -246,7 +249,6 @@ void chapter4()
 
     // if (NULL == q)
     //     cout << "yes" << endl;
-
     // char animal[10] = "bear"; // animal holds bear
     // const char * bird = "wrennnnnnnnnnnnnnnnnnnnnnnnnn"; // bird holds address of string
     // // 实际表示的是字符串的地址，将“xxx”的地址赋给bird指针
@@ -274,14 +276,97 @@ void chapter4()
     // delete [] ps;
 
 // 创建动态结构
+// 如果结构标识符是结构名，则使用句点(.)运算符 (成员运算符)
+// 如果标识符指向结构的指针，使用箭头(->)运算符 (间接运算符)
+    // struct things
+    // {
+    //     int good;
+    //     int bad;
+    // };
+
+    // things grubnose = {3, 453}; // a new struct
+    // things * ps = &grubnose; // pt points to the struct
+
+    // cout << "method 1: " << grubnose.good << "\n";
+    // cout << "method 2: " << ps -> good << endl;
+
+    // things * pt = new things;
+    // cout << "good: ";
+    // pt -> good = cin.get(); // method 1
+    // // cin >> pt -> good; // method 1
+    // cout << "bad: ";
+    // cin >> (* pt).bad; // method 2
+    // cout << (* pt).good << endl; //method 2
+    // cout << pt -> bad << endl; // method 1
+    // delete pt;
+
+
+    // // 内存地址会不一样
+    // char * name;
+    // name = getname();
+    // cout << name << " at " << (int *) name << "\n";
+    // delete [] name;
+
+    // name = getname();
+    // cout << name << " at " << (int *) name << "\n";
+    // delete [] name;
+
+// 类型组合
+    // struct testyear
+    // {
+    //     int year;
+    // };
+
+    // testyear y1, y2, y3; // new struct
+    // y1.year = 2000;
+    // testyear * pa = &y2; // address to pointer
+    // pa -> year = 2001; // assign a new value to the pointer
+    // testyear trio[3]; // array of 3 structures
+    // // trio[1].year = 2003; // would display an empty value in the cout sentence
+    // trio[0].year = 2003;
+    // cout << trio -> year << endl;
+
+    // const testyear * arp[3] = {&y1, &y2, &y3};
+    // cout << arp[1] -> year << endl;
+    // const testyear ** ppa = arp;
+    // auto ppb = arp;
+    // cout << (* ppa) -> year << endl;
+    // cout << (* (ppb + 1)) -> year << endl;
+    // cout << (* ppb + 1) -> year << endl; // What is the difference here
+
+// 数组的替代品
+    vector<int> vi; // zero-size array of int
+    vector<double> vd(10); // an array of 10 doubles
+
+    array<int, 5> ai;
+    array<double, 4> ab = {1.2,4.5,3.4};
+    array<double, 4> abb = ab; // array对象可以直接赋值，数组则需要逐个赋值
+
+    cout << ab[2] << " at " << &ab[2] << endl;
+    cout << abb[2] << " at " << &abb[2] << endl;
     
-
-
 }
+
+// char * getname()
+// {
+//     char temp[100];
+//     cout << "Enter last name: ";
+//     cin >> temp;
+//     char * pn = new char[strlen(temp) + 1]; //copy string into smaller space
+//     strcpy(pn, temp);
+//     return pn;
+// }
+
+
+void hwchapter4()
+{
+}
+
 
 int main()
 {
     cout << "Current Running" << endl;
     chapter4();
+    hwchapter4();
     return 0;
 }
