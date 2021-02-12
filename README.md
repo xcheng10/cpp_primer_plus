@@ -6,4 +6,6 @@ Chapter 4 Notes
 Chapter 4 HW Finished
 Chapter 5 Notes
 Chapter 5 HW Finished
+Chapter 6 Notes (Skip file i/o)
+
 

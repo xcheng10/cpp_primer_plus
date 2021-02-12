@@ -389,8 +389,8 @@ void hwchapter4();
 
 //}
 
-void chapter5()
-{
+// void chapter5()
+// {
     // cout << "Chapter 5.1" << endl;
     // int ArSize = 16;
     // long long fac[ArSize];
@@ -442,33 +442,33 @@ void chapter5()
     //         cout << maxtemps[row][col] << "\t" << endl;
     //     }
     // };
-}
+// }
 
 
-void hwchapter5()
-{
-    cout << "Chapter 5 Homework" << endl;
-    // int j = 5;
-    // int ct = 1;
-    // while (++j < 9){
-    //     cout << ct << endl;
-    //     ct += 1;
-    //     cout << j++ << endl;
-    // }
+// void hwchapter5()
+// {
+//     cout << "Chapter 5 Homework" << endl;
+//     // int j = 5;
+//     // int ct = 1;
+//     // while (++j < 9){
+//     //     cout << ct << endl;
+//     //     ct += 1;
+//     //     cout << j++ << endl;
+//     // }
 
-    struct car{
-        string mnc;
-        int year;
-    };
+//     struct car{
+//         string mnc;
+//         int year;
+//     };
 
-    car * pt = new car;
-    pt -> mnc = "kaiser";
-    pt -> year = 2020;
-    cout << pt -> mnc << endl;
-    cout << pt -> year << endl;
-    delete pt;
+//     car * pt = new car;
+//     pt -> mnc = "kaiser";
+//     pt -> year = 2020;
+//     cout << pt -> mnc << endl;
+//     cout << pt -> year << endl;
+//     delete pt;
 
-}
+// }
 
 // //b可以是静态数组的数组名，也可以是动态数组的首地址
 // int *test(int *b) 
@@ -509,10 +509,66 @@ void hwchapter5()
 //     return 0;
 // }
 
+void chapter6(){
+    // char ch;
+    // std::cout << "Type, and I shall repeat. \n";
+    // std::cin.get(ch);
+
+    // while (ch != '.')
+    // {
+    //     if (ch == '\n'){
+    //         std::cout << ch;
+    //     }else{
+    //         // std::cout << ++ch;
+    //         std::cout << ch + 1; // why there is such difference?
+    //     }
+    //     std::cin.get(ch);
+    // }
+
+    // int a, b;
+    // cout << "Enter two integers: ";
+    // cin >> a >> b;
+// expression1 ? expression2(if expression1 is true) : expression3(if expression1 is false)
+    // int c = a > b ? a : b;
+    // cout << c << endl;
+
+    // const char x[2][20] = {"Jason ", " at your service\n"};
+    // const char *y = "Quillstone";
+
+    // for (int i = 0; i < 3; i++){
+    //     cout << ((i < 2) ? !i ? x[i]:y:x[1]);
+    // };
+
+
+    // enum {red, orange, yellow, green, blue, violet, indigo};
+
+    // cout << "Enter color code: ";
+    // int code;
+    // cin >> code;
+
+    // while (code >= red && code <= blue){
+    //     switch (code) {
+    //         case red : cout << "red\n"; break;
+    //         case orange : cout << "orange\n"; break;
+    //         case yellow: 
+    //         default: cout << "wtf\n";
+    //     }
+    //     cout << "enter color code\n";
+    //     cin >> code;
+    // }
+
+    // cout << "out of range, bye-bye\n";
+
+
+    char ch[50];
+    cin.get(ch, 50); // cin不断读取直到遇到换行符
+    cout << ch << endl;
+}
+
 
 int main()
 {
     cout << "Current Running" << endl;
-    hwchapter5();
+    chapter6();
     return 0;
 }
