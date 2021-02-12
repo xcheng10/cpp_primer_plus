@@ -391,14 +391,128 @@ void hwchapter4();
 
 void chapter5()
 {
-    cout << "Chapter 5.1" << endl;
+    // cout << "Chapter 5.1" << endl;
+    // int ArSize = 16;
+    // long long fac[ArSize];
+    // fac[1] = fac[0] = 1LL;
+    // for (int i = 2; i < ArSize; i++){
+    //     fac[i] = i * fac[i - 1];
+    //     std::cout << i << "!= " << fac[i] << std::endl;
+    // }
+
+
+    //数组名是数组的地址，用括号括起的字符串常量也是地址
+    //word == "mate" 只是比较地址是否相等，需要使用strcmp(char1, char2)
+    //关系运算符可以用来比较字符，不能用来比较字符串
+    //关系运算符可以用来比较string对象
+
+    // char word[5] = "?ate";
+    // for (char ch = 'a'; strcmp(word, "mate"); ch++) //字符串不相等，strcmp(word, "mate")为false
+    // {
+    //     cout << word << endl;
+    //     word[0] = ch;
+    // }
+    // cout << "After loop, word is " << word << endl;
+
+// 类型别名
+// typedef typeName aliasName
+// typeof不会创建新类型，而只是为已有的类型建立一个新名称
+
+    // typedef char * byte_pointer; //pointer to char type
+
+//基于范围的for循环
+    // double prices[5] = {4.09, 4.33, 2.33, 4.12};
+    
+    // for (double x: prices){
+    //     cout << x << endl;
+    // }
+
+    // for (double &x: prices){ // &表示x是一个引用变量
+    //     x = x * 0.8;
+    // }
+
+    // int maxtemps[4][5] = {
+    //     {1,1,1,1,1},
+    //     {2,3,2,2,3},
+    //     {4,3,1,3,4},
+    //     {5,6,7,1}
+    // };
+    // for (int row = 0; row < 4; row++){
+    //     for (int col = 0; col < 5; ++col){
+    //         cout << maxtemps[row][col] << "\t" << endl;
+    //     }
+    // };
 }
 
+
+void hwchapter5()
+{
+    cout << "Chapter 5 Homework" << endl;
+    // int j = 5;
+    // int ct = 1;
+    // while (++j < 9){
+    //     cout << ct << endl;
+    //     ct += 1;
+    //     cout << j++ << endl;
+    // }
+
+    struct car{
+        string mnc;
+        int year;
+    };
+
+    car * pt = new car;
+    pt -> mnc = "kaiser";
+    pt -> year = 2020;
+    cout << pt -> mnc << endl;
+    cout << pt -> year << endl;
+    delete pt;
+
+}
+
+// //b可以是静态数组的数组名，也可以是动态数组的首地址
+// int *test(int *b) 
+// {
+//     //输出传入的数组各元素
+//     for(int i = 0; i < 5; ++i) {
+//         cout << *(b+i)<<" ";
+//     }
+//     cout << endl;
+//     //动态创建一个数组
+//     int *c = new int[5]; 
+//     //如果将绿色部分换为int c[5];则主函数中调用test无法得到c数组
+//     //新数组的各项值等于传入的数组各项值加5
+//     for(int i = 0; i < 5; ++i) { 
+//         *(c+i) = *(b+i) + 5;
+//     }
+//     //返回新创建的动态数组的首地址
+//     return c;     
+// }
+
+// int main()
+// {   
+//     //创建动态数组b
+//     int *b = new int[5];
+//     //赋值
+//     for(int i = 0; i < 5; ++i) {
+//         *(b+i) = i; 
+//     }
+//     //绿色部分也可以换为int b[5]={0,1,2,3,4};即也可以是静态数组
+
+//     //将b作为参数，调用test函数，返回值赋给c
+//     int *c = test(b);   
+//     //输出test返回的数组的各项
+//     for(int i = 0; i < 5; ++i) {
+//         cout << *(c+i) << " ";
+//     }
+//     cout<<endl;
+//     return 0;
+// }
 
 
 int main()
 {
     cout << "Current Running" << endl;
-    chapter5();
+    hwchapter5();
     return 0;
 }
