@@ -13,38 +13,57 @@ int hwchapter2();
 void chapter4();
 char * getname(void);
 void hwchapter4();
+void chapter5();
+void hwchapter5();
+void chapter6();
+void chapter7();
+long double probability(unsigned numbers, unsigned picks);
+int sum_arr(int arr[], int n);
+int fill_array(double *ar, int limit);
+void show_array(const double *ar, int n);
+void alter_array(double r, double *ar, int n);
+int _sum_arr(const int *arr, const int *n);
 
 
 
-// int chapter2()
-// {
-//     int carrots;
-//     int newC = simon(10);
-//     cin >> carrots;
-//     cout << "I have " << carrots << " carrots." << endl;
-//     double newCarrots = sqrt(newC - 1);
-//     cout << "Now I have " << newCarrots << " carrots" << endl;
-//     return 0;
-// }
 
-// int simon(int n)
-// {
-//     return n * 20;
-// }
+int main()
+{
+    cout << "Current Running" << endl;
+    chapter7();
+    return 0;
+}
 
-// int hwchapter2() //homework chapter 2
-// {
-//     int inputTemp;
-//     const float fraction = 1.8;
-//     cout << "Please enter a Celsius Value: " << endl;
-//     cin >> inputTemp;
-//     float outputTemp = inputTemp * fraction + 32.0;
-//     cout << inputTemp << " degrees Celsius is " << outputTemp << " degrees Fahrenheit." << endl;
-//     return 0;
-// }
 
-// void chapter4()
-// {
+int chapter2()
+{
+    // int carrots;
+    // int newC = simon(10);
+    // cin >> carrots;
+    // cout << "I have " << carrots << " carrots." << endl;
+    // double newCarrots = sqrt(newC - 1);
+    // cout << "Now I have " << newCarrots << " carrots" << endl;
+    // return 0;
+}
+
+int simon(int n)
+{
+    // return n * 20;
+}
+
+int hwchapter2() //homework chapter 2
+{
+    // int inputTemp;
+    // const float fraction = 1.8;
+    // cout << "Please enter a Celsius Value: " << endl;
+    // cin >> inputTemp;
+    // float outputTemp = inputTemp * fraction + 32.0;
+    // cout << inputTemp << " degrees Celsius is " << outputTemp << " degrees Fahrenheit." << endl;
+    // return 0;
+}
+
+void chapter4()
+{
     // int arrayInput[10];
     // arrayInput[0] = 0;
     // int newArray[10] = {2,3,4,5};
@@ -345,21 +364,21 @@ void hwchapter4();
     // cout << ab[2] << " at " << &ab[2] << endl;
     // cout << abb[2] << " at " << &abb[2] << endl;
 
-//}
+}
 
-// char * getname()
-// {
-//     char temp[100];
-//     cout << "Enter last name: ";
-//     cin >> temp;
-//     char * pn = new char[strlen(temp) + 1]; //copy string into smaller space
-//     strcpy(pn, temp);
-//     return pn;
-// }
+char * getname()
+{
+    char temp[100];
+    cout << "Enter last name: ";
+    cin >> temp;
+    char * pn = new char[strlen(temp) + 1]; //copy string into smaller space
+    strcpy(pn, temp);
+    return pn;
+}
 
 
-// void hwchapter4()
-// {
+void hwchapter4()
+{
     // array<int, 5> oddNums = {1,3,5,7,9};
     // int * pt = &oddNums[0];
     // cout << * (pt + 1) << endl;
@@ -387,10 +406,10 @@ void hwchapter4();
     // cout << pt -> name << "\n" << pt -> weight << "\n" << pt -> calories << endl;
     // delete pt;
 
-//}
+}
 
-// void chapter5()
-// {
+void chapter5()
+{
     // cout << "Chapter 5.1" << endl;
     // int ArSize = 16;
     // long long fac[ArSize];
@@ -401,10 +420,10 @@ void hwchapter4();
     // }
 
 
-    //数组名是数组的地址，用括号括起的字符串常量也是地址
-    //word == "mate" 只是比较地址是否相等，需要使用strcmp(char1, char2)
-    //关系运算符可以用来比较字符，不能用来比较字符串
-    //关系运算符可以用来比较string对象
+    // // 数组名是数组的地址，用括号括起的字符串常量也是地址
+    // // word == "mate" 只是比较地址是否相等，需要使用strcmp(char1, char2)
+    // // 关系运算符可以用来比较字符，不能用来比较字符串
+    // // 关系运算符可以用来比较string对象
 
     // char word[5] = "?ate";
     // for (char ch = 'a'; strcmp(word, "mate"); ch++) //字符串不相等，strcmp(word, "mate")为false
@@ -414,13 +433,13 @@ void hwchapter4();
     // }
     // cout << "After loop, word is " << word << endl;
 
-// 类型别名
-// typedef typeName aliasName
-// typeof不会创建新类型，而只是为已有的类型建立一个新名称
+    // // 类型别名
+    // // typedef typeName aliasName
+    // // typeof不会创建新类型，而只是为已有的类型建立一个新名称
 
     // typedef char * byte_pointer; //pointer to char type
 
-//基于范围的for循环
+    // // 基于范围的for循环
     // double prices[5] = {4.09, 4.33, 2.33, 4.12};
     
     // for (double x: prices){
@@ -436,80 +455,81 @@ void hwchapter4();
     //     {2,3,2,2,3},
     //     {4,3,1,3,4},
     //     {5,6,7,1}
-    // };
+    // }
+
     // for (int row = 0; row < 4; row++){
     //     for (int col = 0; col < 5; ++col){
     //         cout << maxtemps[row][col] << "\t" << endl;
     //     }
+    // }
+}
+
+
+void hwchapter5()
+{
+    // cout << "Chapter 5 Homework" << endl;
+    // // int j = 5;
+    // // int ct = 1;
+    // // while (++j < 9){
+    // //     cout << ct << endl;
+    // //     ct += 1;
+    // //     cout << j++ << endl;
+    // // }
+
+    // struct car{
+    //     string mnc;
+    //     int year;
     // };
-// }
 
+    // car * pt = new car;
+    // pt -> mnc = "kaiser";
+    // pt -> year = 2020;
+    // cout << pt -> mnc << endl;
+    // cout << pt -> year << endl;
+    // delete pt;
 
-// void hwchapter5()
-// {
-//     cout << "Chapter 5 Homework" << endl;
-//     // int j = 5;
-//     // int ct = 1;
-//     // while (++j < 9){
-//     //     cout << ct << endl;
-//     //     ct += 1;
-//     //     cout << j++ << endl;
-//     // }
+}
 
-//     struct car{
-//         string mnc;
-//         int year;
-//     };
+//b可以是静态数组的数组名，也可以是动态数组的首地址
+int *test(int *b) 
+{
+    // //输出传入的数组各元素
+    // for(int i = 0; i < 5; ++i) {
+    //     cout << *(b+i)<<" ";
+    // }
+    // cout << endl;
+    // //动态创建一个数组
+    // int *c = new int[5]; 
+    // //如果将绿色部分换为int c[5];则主函数中调用test无法得到c数组
+    // //新数组的各项值等于传入的数组各项值加5
+    // for(int i = 0; i < 5; ++i) { 
+    //     *(c+i) = *(b+i) + 5;
+    // }
+    // //返回新创建的动态数组的首地址
+    // return c;     
+}
 
-//     car * pt = new car;
-//     pt -> mnc = "kaiser";
-//     pt -> year = 2020;
-//     cout << pt -> mnc << endl;
-//     cout << pt -> year << endl;
-//     delete pt;
+int _main()
+{   
+    // //创建动态数组b
+    // int *b = new int[5];
+    // //赋值
+    // for(int i = 0; i < 5; ++i) {
+    //     *(b+i) = i; 
+    // }
+    // //绿色部分也可以换为int b[5]={0,1,2,3,4};即也可以是静态数组
 
-// }
+    // //将b作为参数，调用test函数，返回值赋给c
+    // int *c = test(b);   
+    // //输出test返回的数组的各项
+    // for(int i = 0; i < 5; ++i) {
+    //     cout << *(c+i) << " ";
+    // }
+    // cout<<endl;
+    // return 0;
+}
 
-// //b可以是静态数组的数组名，也可以是动态数组的首地址
-// int *test(int *b) 
-// {
-//     //输出传入的数组各元素
-//     for(int i = 0; i < 5; ++i) {
-//         cout << *(b+i)<<" ";
-//     }
-//     cout << endl;
-//     //动态创建一个数组
-//     int *c = new int[5]; 
-//     //如果将绿色部分换为int c[5];则主函数中调用test无法得到c数组
-//     //新数组的各项值等于传入的数组各项值加5
-//     for(int i = 0; i < 5; ++i) { 
-//         *(c+i) = *(b+i) + 5;
-//     }
-//     //返回新创建的动态数组的首地址
-//     return c;     
-// }
-
-// int main()
-// {   
-//     //创建动态数组b
-//     int *b = new int[5];
-//     //赋值
-//     for(int i = 0; i < 5; ++i) {
-//         *(b+i) = i; 
-//     }
-//     //绿色部分也可以换为int b[5]={0,1,2,3,4};即也可以是静态数组
-
-//     //将b作为参数，调用test函数，返回值赋给c
-//     int *c = test(b);   
-//     //输出test返回的数组的各项
-//     for(int i = 0; i < 5; ++i) {
-//         cout << *(c+i) << " ";
-//     }
-//     cout<<endl;
-//     return 0;
-// }
-
-void chapter6(){
+// void chapter6(){
     // char ch;
     // std::cout << "Type, and I shall repeat. \n";
     // std::cin.get(ch);
@@ -560,15 +580,130 @@ void chapter6(){
     // cout << "out of range, bye-bye\n";
 
 
-    char ch[50];
-    cin.get(ch, 50); // cin不断读取直到遇到换行符
-    cout << ch << endl;
+    // char ch[50];
+    // cin.get(ch, 50); // cin不断读取直到遇到换行符
+    // cout << ch << endl;
+//}
+
+void chapter7(){
+
+    // c++不能返回数组，但是可以返回int，float，指针，结构和对象
+
+    // double total, choices;
+
+    // while ((cin >> total >> choices) && choices <= total){
+    //     cout << probability(total, choices);
+    //     cout << endl;
+    // };
+
+    // cout << "End\n";
+
+    const int ArSize = 8;
+    int cookies[ArSize] = {1,2,3,4,5,6,7,8};
+    cout << cookies << " = array address, ";
+    cout << sizeof(cookies) << " = sizeof cookies\n";
+    int sum = _sum_arr(cookies, cookies + ArSize);
+    cout << sum << endl;
+
+    int sumFirstThree = _sum_arr(cookies, cookies + 4);
+    cout << sumFirstThree << endl;
+
+    int sumLastThree = _sum_arr(cookies + 4, cookies + 8);
+    cout << sumLastThree << endl;
+
+
+    // int Max = 5;
+    // double properties[Max];
+    // int size = fill_array(properties, Max);
+    // show_array(properties, Max);
+    // double factor = 1.2;
+    // alter_array(factor, properties, Max);
+    // show_array(properties, Max);
+    // cout << "Done. \n";
+    // cin.get();
+    // cin.get();  
+
+};
+
+long double probability(unsigned numbers, unsigned picks){
+    long double result = 1.0;
+    long double n;
+    unsigned p;
+
+    for (n = numbers, p = picks; p > 0; n--, p--){
+        result = result * n / p;
+    };
+
+    return result;
+}
+
+// int cookies[8] = {1,2,3,4,5,6,7,8}
+// cookie == &cookies[0]
+// 数组名解释为其第一个元素的地址
+// 对数组名使用sizeof得到整个数组的长度
+// 将&应用于数组名时，返回整个数组的地址，上面将返回一个32字节内存块的地址
+
+// arr[i] = *(ar + i) // values in two notations
+// &arr[i] == ar + i // address in two notations
+// 将指针/数组名加1，实际是加上了一个与指针指向的类型的长度(以字节为单位)相等的值。对于遍历数组时，使用指针加法和数组下标是等效的
+
+// int sum_arr(int *arr, int n) 为正确的函数头因为函数传递的是地址
+// int sum_arr(int arr[], int n){
+int sum_arr(int *arr, int n){
+    int total = 0;
+
+    std::cout << arr << " = arr, ";
+    std::cout << sizeof(arr) << " = size of arr\n";
+
+    for (int i = 0; i < n; i++){
+        total += arr[i];
+    };
+    return total;
+};
+
+// update version with const pointer:
+int _sum_arr(const int *arr, const int *n){
+    const int *pt;
+    int total = 0;
+
+    for (pt = arr; pt != n; pt++){
+        total += *pt;
+    }
+
+    return total;
 }
 
 
-int main()
-{
-    cout << "Current Running" << endl;
-    chapter6();
-    return 0;
+int fill_array(double *ar, int limit){
+    double temp;
+    int i;
+    for (i = 0; i < limit; i++){
+        cout << "Enter value #" << (i + 1) << ": ";
+        cin >> temp;
+        if (!cin){
+            cin.clear();
+            while (cin.get() != '\n'){
+                continue;
+            }
+            break;
+        }else if (temp < 0){
+            break;
+        }
+        ar[i] = temp;
+    }
+
+    return i;
+}
+
+
+void show_array(const double *ar, int n){
+    for (int i = 0; i < n; i++){
+        cout << "Number: " << (i + 1) << " : $" << ar[i] << endl;
+    }
+}
+
+void alter_array(double r, double *ar, int n){
+    for (int i = 0; i < n; i++){
+        ar[i] *= r;
+    }
 }
