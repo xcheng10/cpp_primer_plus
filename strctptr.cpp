@@ -31,12 +31,11 @@ int main(){
     return 0;
 }
 
-
 void show_polar(const polar *pda){
     const double rtd = 57.295777951;
     cout << "d = " << pda -> distance;
     cout << ", angle = " << pda -> angle * rtd << "\n" << endl;
-};
+}
 
 void rect_to_polar(const rect * pxy, polar * pda){
     pda -> distance = sqrt(pxy -> x * pxy -> x + pxy->y * pxy->y);
