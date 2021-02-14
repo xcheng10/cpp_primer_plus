@@ -15,4 +15,6 @@ Chapter 6 Notes (Skip file i/o)
 
 Chapter 7.3.5 on 2/12/2021
 
+Chapter 7.7 with strctptr.cpp
+
 

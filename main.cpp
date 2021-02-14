@@ -8,8 +8,8 @@
 
 using namespace std;
 int simon(int);
-int chapter2();
-int hwchapter2();
+void chapter2();
+void hwchapter2();
 void chapter4();
 char * getname(void);
 void hwchapter4();
@@ -23,6 +23,8 @@ int fill_array(double *ar, int limit);
 void show_array(const double *ar, int n);
 void alter_array(double r, double *ar, int n);
 int _sum_arr(const int *arr, const int *n);
+int sum_2d_arr(int arr[][4], int size);
+unsigned int c_in_str(const char *str, char ch);
 
 
 
@@ -35,7 +37,7 @@ int main()
 }
 
 
-int chapter2()
+void chapter2()
 {
     // int carrots;
     // int newC = simon(10);
@@ -43,7 +45,6 @@ int chapter2()
     // cout << "I have " << carrots << " carrots." << endl;
     // double newCarrots = sqrt(newC - 1);
     // cout << "Now I have " << newCarrots << " carrots" << endl;
-    // return 0;
 }
 
 int simon(int n)
@@ -51,7 +52,7 @@ int simon(int n)
     // return n * 20;
 }
 
-int hwchapter2() //homework chapter 2
+void hwchapter2()
 {
     // int inputTemp;
     // const float fraction = 1.8;
@@ -59,7 +60,6 @@ int hwchapter2() //homework chapter 2
     // cin >> inputTemp;
     // float outputTemp = inputTemp * fraction + 32.0;
     // cout << inputTemp << " degrees Celsius is " << outputTemp << " degrees Fahrenheit." << endl;
-    // return 0;
 }
 
 void chapter4()
@@ -100,13 +100,17 @@ void chapter4()
     // cout << guest.name << endl;
     // cout << gift[0].name << endl;
     // cout << gift[99].price << endl;
-// union structure
+
+    // union structure
+
     // one4all pail; 
     // pail.double_val = 1.38;
     // pail.int_val = 10;
     // cout << pail.int_val << endl;
     // cout << pail.double_val << endl;
-// enumurate structure
+
+    // enumurate structure
+
     // enum spectrum {red = 0, blue = 1, yellow = 2, green = 1, violet = 0}; //
     // spectrum band;
     // band = blue;
@@ -116,21 +120,20 @@ void chapter4()
     // cout << &band << endl;
     // cout << &band2 << endl;
 
-// 4.7 pointer
-// 信息储存在何处
-
+    // 4.7 pointer
+    // 信息储存在何处
     // int num1 = 8888888;
     // int num2 = 8888889;
     // cout << &num1 << endl;
     // cout << &num2 << endl;
 
 
-// 存储的值是多少
-// 存储的信息是什么类别
-// 指针是一个变量，存储的是值的地址
-// int变量updates表示值，用 & 来获得地址
-// p_updates表示地址，用 * 来获得值
-// p_updates指向updates，*p_updates和updates等价
+    // 存储的值是多少
+    // 存储的信息是什么类别
+    // 指针是一个变量，存储的是值的地址
+    // int变量updates表示值，用 & 来获得地址
+    // p_updates表示地址，用 * 来获得值
+    // p_updates指向updates，*p_updates和updates等价
 
     // char updates[20] = "super bowl";
     // char* p_updates = &updates[0];
@@ -186,7 +189,7 @@ void chapter4()
 
     // cout << "new int init" << endl;
 
-// //typeName * pointerName = new typeName
+    // //typeName * pointerName = new typeName
     // int * pt = new int; // allocate space for an int
     // *pt = 10001; // store a value there
 
@@ -208,8 +211,8 @@ void chapter4()
     // cout << sizeof(pd) << endl;
     // cout << sizeof(*pd) << endl;
 
-//     delete pd; //释放指向的内存，但不会删除指针本身
-//     cout << "pd = " << pd << endl;
+    //  delete pd; //释放指向的内存，但不会删除指针本身
+    //  cout << "pd = " << pd << endl;
 
 
     // int * psome = new int [10]; // get a block of 10 ints
@@ -225,11 +228,12 @@ void chapter4()
     // delete [] psome;
 
 
-// // 指针算术
+    // // 指针算术
     // double wages[3] = {10000.0, 20000.0, 30000.0};
     // short stacks[3] = {3,2,1};
 
-// // two ways to get the address of an array
+    // // two ways to get the address of an array
+
     // double * pw = wages; // name of array = address
     // short * ps = &stacks[0]; // or use address operator
 
@@ -241,8 +245,9 @@ void chapter4()
     // ps += 1;
     // cout << "ps += 1 then ps = " << ps << ", *ps = " << *ps << "\n\n" << endl;
 
-// // arrayname[i] becomes *(arrayname + i)
-// // pointername[i] becomes *(pointername + i)
+    // // arrayname[i] becomes *(arrayname + i)
+    // // pointername[i] becomes *(pointername + i)
+
     // cout << stacks[0] << " | " << stacks[1] << endl; // access two elements with array notation
     // cout << *stacks << " | " << *(stacks + 1) << endl; // access two elements with pointer notation
 
@@ -255,7 +260,7 @@ void chapter4()
     // short (*pas) [20] = &tell;
     // cout << (*pas) << endl;
 
-// 空指针
+    // 空指针
     // int a = 0;
     // int *p = &a;
     // int *q = NULL;
@@ -294,9 +299,9 @@ void chapter4()
     // cout << ps << " at " << (int *) ps << endl;
     // delete [] ps;
 
-// 创建动态结构
-// 如果结构标识符是结构名，则使用句点(.)运算符 (成员运算符)
-// 如果标识符指向结构的指针，使用箭头(->)运算符 (间接运算符)
+    // 创建动态结构
+    // 如果结构标识符是结构名，则使用句点(.)运算符 (成员运算符)
+    // 如果标识符指向结构的指针，使用箭头(->)运算符 (间接运算符)
     // struct things
     // {
     //     int good;
@@ -330,7 +335,7 @@ void chapter4()
     // cout << name << " at " << (int *) name << "\n";
     // delete [] name;
 
-// 类型组合
+    // 类型组合
     // struct testyear
     // {
     //     int year;
@@ -353,7 +358,7 @@ void chapter4()
     // cout << (* (ppb + 1)) -> year << endl;
     // cout << (* ppb + 1) -> year << endl; // What is the difference here
 
-// 数组的替代品
+    // 数组的替代品
     // vector<int> vi; // zero-size array of int
     // vector<double> vd(10); // an array of 10 doubles
 
@@ -529,7 +534,7 @@ int _main()
     // return 0;
 }
 
-// void chapter6(){
+void chapter6(){
     // char ch;
     // std::cout << "Type, and I shall repeat. \n";
     // std::cin.get(ch);
@@ -548,7 +553,8 @@ int _main()
     // int a, b;
     // cout << "Enter two integers: ";
     // cin >> a >> b;
-// expression1 ? expression2(if expression1 is true) : expression3(if expression1 is false)
+
+    // expression1 ? expression2(if expression1 is true) : expression3(if expression1 is false)
     // int c = a > b ? a : b;
     // cout << c << endl;
 
@@ -583,7 +589,7 @@ int _main()
     // char ch[50];
     // cin.get(ch, 50); // cin不断读取直到遇到换行符
     // cout << ch << endl;
-//}
+}
 
 void chapter7(){
 
@@ -598,18 +604,18 @@ void chapter7(){
 
     // cout << "End\n";
 
-    const int ArSize = 8;
-    int cookies[ArSize] = {1,2,3,4,5,6,7,8};
-    cout << cookies << " = array address, ";
-    cout << sizeof(cookies) << " = sizeof cookies\n";
-    int sum = _sum_arr(cookies, cookies + ArSize);
-    cout << sum << endl;
+    // const int ArSize = 8;
+    // int cookies[ArSize] = {1,2,3,4,5,6,7,8};
+    // cout << cookies << " = array address, ";
+    // cout << sizeof(cookies) << " = sizeof cookies\n";
+    // int sum = _sum_arr(cookies, cookies + ArSize);
+    // cout << sum << endl;
 
-    int sumFirstThree = _sum_arr(cookies, cookies + 4);
-    cout << sumFirstThree << endl;
+    // int sumFirstThree = _sum_arr(cookies, cookies + 4);
+    // cout << sumFirstThree << endl;
 
-    int sumLastThree = _sum_arr(cookies + 4, cookies + 8);
-    cout << sumLastThree << endl;
+    // int sumLastThree = _sum_arr(cookies + 4, cookies + 8);
+    // cout << sumLastThree << endl;
 
 
     // int Max = 5;
@@ -622,6 +628,44 @@ void chapter7(){
     // cout << "Done. \n";
     // cin.get();
     // cin.get();  
+
+    int age = 39;
+    const int *pt = &age; 
+    // pt指向一个const int，因此不能使用pt来修改这个值；*pt的值为const，不能被修改
+    // *pt += 1; // invalid because pt points to a const int
+    // cin >> *pt // invalid for the same reason
+
+    // pt的声明并不意味它指向的值实际就是一个常量，而只是意味着对pt而言这个值是常量
+    // pt指向age，而age不是const。可以直接通过age变量来修改age的值，但不能通过指针修改
+
+    const float g_earth = 9.8;
+    const float *pe = &g_earth;
+    // 既不能使用g_earth来修改值9.8，也不能使用pe来修改
+
+    // const float g_moon = 1.63;
+    // float *pm = &g_moon;
+    // const地址不能赋给非const指针；除非使用强制类型转换
+
+    // int new_age = 39; // age++ is a valid operation
+    // int *pd = &age; // *pd = 41 is a valid operation
+    // const int *ptt = pd; // *pt = 42 is an invalid operation
+
+    // int sloth = 3;
+    // const int *ps = &sloth; // a pointer to const int
+    // int *const finger = &sloth; // a const pointer to int
+
+    // 最后的声明中，finger只能指向sloth，允许使用finger修改sloth的值
+    // 中间的声明中，不允许使用ps来修改sloth的值，但是允许ps指向另一位位置
+
+    // int data[3][4] = {{1,2,3,4}, {4,5,6,7}, {1,3,5,4}};
+    // // int total = sum_arr(data, 3); //wrong
+
+    // int total = sum_2d_arr(data, 3);
+    // cout << total << endl;
+
+    char *wail = "ululululate";
+    unsigned int us = c_in_str(wail, 'u');
+    cout << us << endl;
 
 };
 
@@ -673,6 +717,16 @@ int _sum_arr(const int *arr, const int *n){
     return total;
 }
 
+// sum over two dimention arrays
+int sum_2d_arr(int arr[][4], int size){
+    int total = 0;
+    for (int r = 0; r < size; r++){
+        for (int c = 0; c < 4; c++){
+            total += arr[r][c];
+        }
+    }
+    return total;
+}
 
 int fill_array(double *ar, int limit){
     double temp;
@@ -695,7 +749,6 @@ int fill_array(double *ar, int limit){
     return i;
 }
 
-
 void show_array(const double *ar, int n){
     for (int i = 0; i < n; i++){
         cout << "Number: " << (i + 1) << " : $" << ar[i] << endl;
@@ -706,4 +759,15 @@ void alter_array(double r, double *ar, int n){
     for (int i = 0; i < n; i++){
         ar[i] *= r;
     }
+}
+
+unsigned int c_in_str(const char *str, char ch){
+    unsigned int count = 0;
+    while (*str){
+        if (*str == ch){
+            count+=1;
+        }
+        str+=1;
+    }
+    return count;
 }
