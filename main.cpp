@@ -25,6 +25,7 @@ void alter_array(double r, double *ar, int n);
 int _sum_arr(const int *arr, const int *n);
 int sum_2d_arr(int arr[][4], int size);
 unsigned int c_in_str(const char *str, char ch);
+void display(const string sa[], int n);
 
 
 
@@ -49,7 +50,7 @@ void chapter2()
 
 int simon(int n)
 {
-    // return n * 20;
+    return n * 20;
 }
 
 void hwchapter2()
@@ -496,44 +497,45 @@ void hwchapter5()
 }
 
 //b可以是静态数组的数组名，也可以是动态数组的首地址
-int *test(int *b) 
-{
-    // //输出传入的数组各元素
-    // for(int i = 0; i < 5; ++i) {
-    //     cout << *(b+i)<<" ";
+    // int *test(int *b) 
+    // {
+    //     // //输出传入的数组各元素
+    //     // for(int i = 0; i < 5; ++i) {
+    //     //     cout << *(b+i)<<" ";
+    //     // }
+    //     // cout << endl;
+    //     // //动态创建一个数组
+    //     // int *c = new int[5]; 
+    //     // //如果将绿色部分换为int c[5];则主函数中调用test无法得到c数组
+    //     // //新数组的各项值等于传入的数组各项值加5
+    //     // for(int i = 0; i < 5; ++i) { 
+    //     //     *(c+i) = *(b+i) + 5;
+    //     // }
+    //     // //返回新创建的动态数组的首地址
+    //     // return c;     
     // }
-    // cout << endl;
-    // //动态创建一个数组
-    // int *c = new int[5]; 
-    // //如果将绿色部分换为int c[5];则主函数中调用test无法得到c数组
-    // //新数组的各项值等于传入的数组各项值加5
-    // for(int i = 0; i < 5; ++i) { 
-    //     *(c+i) = *(b+i) + 5;
-    // }
-    // //返回新创建的动态数组的首地址
-    // return c;     
-}
 
-int _main()
-{   
-    // //创建动态数组b
-    // int *b = new int[5];
-    // //赋值
-    // for(int i = 0; i < 5; ++i) {
-    //     *(b+i) = i; 
-    // }
-    // //绿色部分也可以换为int b[5]={0,1,2,3,4};即也可以是静态数组
+    // int main()
+    // {   
+    //     // //创建动态数组b
+    //     // int *b = new int[5];
+    //     // //赋值
+    //     // for(int i = 0; i < 5; ++i) {
+    //     //     *(b+i) = i; 
+    //     // }
+    //     // //绿色部分也可以换为int b[5]={0,1,2,3,4};即也可以是静态数组
 
-    // //将b作为参数，调用test函数，返回值赋给c
-    // int *c = test(b);   
-    // //输出test返回的数组的各项
-    // for(int i = 0; i < 5; ++i) {
-    //     cout << *(c+i) << " ";
+    //     // //将b作为参数，调用test函数，返回值赋给c
+    //     // int *c = test(b);   
+    //     // //输出test返回的数组的各项
+    //     // for(int i = 0; i < 5; ++i) {
+    //     //     cout << *(c+i) << " ";
+    //     // }
+    //     // cout<<endl;
+    //     // return 0;
     // }
-    // cout<<endl;
-    // return 0;
-}
 
+// chapter 6
 void chapter6(){
     // char ch;
     // std::cout << "Type, and I shall repeat. \n";
@@ -663,11 +665,24 @@ void chapter7(){
     // int total = sum_2d_arr(data, 3);
     // cout << total << endl;
 
-    char *wail = "ululululate";
-    unsigned int us = c_in_str(wail, 'u');
-    cout << us << endl;
+    // char *wail = "ululululate";
+    // unsigned int us = c_in_str(wail, 'u');
+    // cout << us << endl;
 
-};
+
+    const int SIZE = 5;
+    string list[SIZE];
+
+    for (int i = 0; i < SIZE; i++){
+        cout << i + 1 << ": ";
+        getline(cin, list[i]);
+
+    }
+
+    cout << "Your list:\n";
+    display(list, SIZE);
+
+}
 
 long double probability(unsigned numbers, unsigned picks){
     long double result = 1.0;
@@ -703,7 +718,7 @@ int sum_arr(int *arr, int n){
         total += arr[i];
     };
     return total;
-};
+}
 
 // update version with const pointer:
 int _sum_arr(const int *arr, const int *n){
@@ -770,4 +785,11 @@ unsigned int c_in_str(const char *str, char ch){
         str+=1;
     }
     return count;
+}
+
+
+void display(const string sa[], int n){
+    for (int i = 0; i < n; i++){
+        cout << i + 1 << ": " << sa[i] << endl;
+    }
 }
