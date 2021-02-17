@@ -17,4 +17,6 @@ Chapter 7.3.5 on 2/12/2021
 
 Chapter 7.7 with strctptr.cpp
 
+Chapter 7.8
+
 
