@@ -26,6 +26,12 @@ int _sum_arr(const int *arr, const int *n);
 int sum_2d_arr(int arr[][4], int size);
 unsigned int c_in_str(const char *str, char ch);
 void display(const string sa[], int n);
+void show(std::array<double, 4> da);
+void fill(std::array<double, 4> *pa);
+void countdown(int n);
+double betsy(int);
+double pam(int);
+void estimate(int, double (*) (int));
 
 
 
@@ -496,7 +502,7 @@ void hwchapter5()
 
 }
 
-//b可以是静态数组的数组名，也可以是动态数组的首地址
+// b可以是静态数组的数组名，也可以是动态数组的首地址
     // int *test(int *b) 
     // {
     //     // //输出传入的数组各元素
@@ -535,7 +541,6 @@ void hwchapter5()
     //     // return 0;
     // }
 
-// chapter 6
 void chapter6(){
     // char ch;
     // std::cout << "Type, and I shall repeat. \n";
@@ -593,6 +598,10 @@ void chapter6(){
     // cout << ch << endl;
 }
 
+
+const int Seasons = 4;
+const std::array<std::string, Seasons> Snames = {"Spring", "Summer", "Fall", "Winter"};
+
 void chapter7(){
 
     // c++不能返回数组，但是可以返回int，float，指针，结构和对象
@@ -631,8 +640,8 @@ void chapter7(){
     // cin.get();
     // cin.get();  
 
-    int age = 39;
-    const int *pt = &age; 
+    // int age = 39;
+    // const int *pt = &age; 
     // pt指向一个const int，因此不能使用pt来修改这个值；*pt的值为const，不能被修改
     // *pt += 1; // invalid because pt points to a const int
     // cin >> *pt // invalid for the same reason
@@ -640,8 +649,8 @@ void chapter7(){
     // pt的声明并不意味它指向的值实际就是一个常量，而只是意味着对pt而言这个值是常量
     // pt指向age，而age不是const。可以直接通过age变量来修改age的值，但不能通过指针修改
 
-    const float g_earth = 9.8;
-    const float *pe = &g_earth;
+    // const float g_earth = 9.8;
+    // const float *pe = &g_earth;
     // 既不能使用g_earth来修改值9.8，也不能使用pe来修改
 
     // const float g_moon = 1.63;
@@ -669,18 +678,81 @@ void chapter7(){
     // unsigned int us = c_in_str(wail, 'u');
     // cout << us << endl;
 
+    // Chapter 7.7
+    // const int SIZE = 5;
+    // string list[SIZE];
 
-    const int SIZE = 5;
-    string list[SIZE];
+    // for (int i = 0; i < SIZE; i++){
+    //     cout << i + 1 << ": ";
+    //     getline(cin, list[i]);
 
-    for (int i = 0; i < SIZE; i++){
-        cout << i + 1 << ": ";
-        getline(cin, list[i]);
+    // }
 
-    }
+    // cout << "Your list:\n";
+    // display(list, SIZE);
 
-    cout << "Your list:\n";
-    display(list, SIZE);
+    // std::array<double, Seasons> expenses; // 使用C++模板类array，并非只能存储基本数据类型，还可以存储类对象
+
+    // fill(&expenses);
+    // show(expenses);
+
+    // countdown(10);
+
+    // Chapter 7.10
+    // 直接使用函数名（不接参数）就可以获取函数地址
+    // process(think) // passes address of think() to process()
+    // thought(think()) // passes return value of think() to thought()
+
+    // double pam(int); // 函数原型
+    // double (*pf) (int); // pf points to a function that takes one int argument and that returns type double；pf是指向函数的指针
+    // double *pf (int); // pf() a function that returns a pointer-to-double；pf是返回指针的函数
+
+    // double pam(int);
+    // int ted(int);
+    // double ned(double);
+    // double (*pf)(int);
+    // pf = pam; // pf now points to the pam() function
+    // pf = ted // invalid: mismatched return types
+    // pf = ned // invalid: mismatched signature
+
+    // double pam(int);
+    // double (*pf) (int);
+    // pf = pam; // pf now points to the pam() function
+    // double x = pam(4) // call pam() using the function name
+    // double y = (*pf) (5) // call pam() using the pointer pf
+
+    // int code;
+    // cout << "How many lines? ";
+    // cin >> code;
+    // cout << "Betsy output: \n";
+    // estimate(code, betsy);
+    // cout << "Pam output: \n";
+    // estimate(code, pam);
+
+    // const double *(*pa[3]) (const double *, int) = {f1,f2,f3}
+    // pa是一个包含三个元素的数组，首先需要使用pa[3]。其中每个指针都指向这样的函数，将const double *和int作为参数，返回const double *
+    // 运算符[]的优先级高于*，因此*pa[3]表示pa是一个包含三个指针的数组
+    // 特征标为const double *，int且返回类型为const double *的函数。
+    // 不能使用auto因为自动类型推断只能用于单值初始化，不能用于初始化列表。但可以用auto声明同类型数组 auto pb = pa
+    // pa[i] & pb[i]都表示数组中的指针，调用方法如下：
+    // const double *px = pa[0](av, 3);
+    // const double *py = (*pb[1])(av, 3);
+
+    // 要获得指向double的值，使用运算符*
+    // double x = *pa[0](av, 3);
+    // double y = *(*pb[1])(av, 3);
+
+    //创建指向整个数组的指针。pa是指向函数指针的指针，因此指向数组的指针将是这样的指针
+    // *pd[3] // an array of 3 pointers
+    // (*pd)[3] // a pointer to an array of 3 pointers
+    // const double *(*(*pd)[3])(const double *, int) = &pa
+    // pd指向数组；*pd就是数组；(*pd)[i]是数组中的元素，即函数指针；
+    // *(*pd)[3](av, 3)返回指针指向的值；*(*(*pd)[3])(av, 3)是指向的double值
+
+    //pa代表数组第一个元素的地址，即&pa[0]
+    //&pa是整个数组的地址（即三个指针块）
+    //数字上来说pa和&pa的值相同，但是pa+1是数组中下一个元素的地址，&pa+1是数组pa后面一个12字节内存块的地址（假设地址为4字节）
+
 
 }
 
@@ -787,9 +859,47 @@ unsigned int c_in_str(const char *str, char ch){
     return count;
 }
 
-
 void display(const string sa[], int n){
     for (int i = 0; i < n; i++){
         cout << i + 1 << ": " << sa[i] << endl;
     }
+}
+
+void fill(std::array<double, Seasons> *pa){
+    for (int i = 0; i < Seasons; i++){
+        cout << "Enter " << Snames[i] << " expenses: ";
+        cin >> (*pa)[i];
+    }
+}
+
+void show(std::array<double, Seasons> da){
+    double total = 0.0;
+    cout << "\nEXPENSES\n";
+    for (int i = 0; i < Seasons; i++){
+        cout << Snames[i] << ": $" << da[i] << endl;
+        total += da[i];
+    }
+    cout << "Total Expenses: $" << total << endl;
+}
+
+void countdown(int n){
+    cout << "Counting down ..." << n << " (n at " << &n << ")" << endl;
+    if (n > 0){
+        countdown(n - 1);
+    }
+
+    cout << n << ": Kaboom!" << n << " (n at " << &n << ")" << endl;
+}
+
+double betsy(int lns){
+    return 0.05 * lns;
+}
+
+double pam(int lns){
+    return 0.03 * lns + 0.0004 * lns * lns;
+}
+
+void estimate(int lines, double (*pf) (int)){
+    cout << lines << " lines will take ";
+    cout << (*pf)(lines) << " hours\n";
 }
