@@ -790,12 +790,6 @@ void chapter7(){
     const double *(*(*pd)[3]) (const double *, int) = &pa;
     const double *pdb = (*pd)[1](av, 3);
     cout << pdb << ": " << *pdb << endl;
-
-
-
-
-
-
 }
 
 long double probability(unsigned numbers, unsigned picks){
