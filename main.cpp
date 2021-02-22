@@ -754,42 +754,42 @@ void chapter7(){
     //数字上来说pa和&pa的值相同，但是pa+1是数组中下一个元素的地址，&pa+1是数组pa后面一个12字节内存块的地址（假设地址为4字节）
 
 
-    double av[3] = {19292.3, 101023.4444, 10123.12313};
+    // double av[3] = {19292.3, 101023.4444, 10123.12313};
 
-    // pointer to function
-    const double *(*p1) (const double *, int) = f1;
-    auto p2 = f2;
-    cout << "Using pointer to functions: \n";
-    cout << " Address Value\n";
-    cout << (*p1)(av, 3) << ": " << *(*p1)(av, 3) << endl;
-    cout << p2(av, 3) << ": " << *p2(av, 3) << endl;
+    // // pointer to function
+    // const double *(*p1) (const double *, int) = f1;
+    // auto p2 = f2;
+    // cout << "Using pointer to functions: \n";
+    // cout << " Address Value\n";
+    // cout << (*p1)(av, 3) << ": " << *(*p1)(av, 3) << endl;
+    // cout << p2(av, 3) << ": " << *p2(av, 3) << endl;
 
-    // pa an array of pointers
-    // auto doesnt work with list init
-    const double *(*pa[3]) (const double *, int) = {f1, f2, f3};
-    // but it does work for init to a single value
-    // pb a pointer to first element of pa
-    auto pb = pa;
+    // // pa an array of pointers
+    // // auto doesnt work with list init
+    // const double *(*pa[3]) (const double *, int) = {f1, f2, f3};
+    // // but it does work for init to a single value
+    // // pb a pointer to first element of pa
+    // auto pb = pa;
 
-    cout << "\nUsing an array of pointers to functions:\n";
-    cout << " Address Value \n";
-    for (int i = 0; i < 3; i++){
-        cout << pa[i](av, 3) << ": " << *pa[i](av, 3) << endl;
-    };
+    // cout << "\nUsing an array of pointers to functions:\n";
+    // cout << " Address Value \n";
+    // for (int i = 0; i < 3; i++){
+    //     cout << pa[i](av, 3) << ": " << *pa[i](av, 3) << endl;
+    // };
 
-    cout << "\nUsing a pointer to a pointer to a function:\n";
-    cout << " Address Value \n";
-        for (int i = 0; i < 3; i++){
-        cout << pb[i](av, 3) << ": " << *pb[i](av, 3) << endl;
-    };
+    // cout << "\nUsing a pointer to a pointer to a function:\n";
+    // cout << " Address Value \n";
+    //     for (int i = 0; i < 3; i++){
+    //     cout << pb[i](av, 3) << ": " << *pb[i](av, 3) << endl;
+    // };
 
-    cout << "\nUsing pointers to an array of pointers:\n";
-    cout << " Address Value \n";
-    auto pc = &pa;
-    cout << (*pc)[0](av, 3) << ": " << *(*pc)[0](av, 3) << endl;
-    const double *(*(*pd)[3]) (const double *, int) = &pa;
-    const double *pdb = (*pd)[1](av, 3);
-    cout << pdb << ": " << *pdb << endl;
+    // cout << "\nUsing pointers to an array of pointers:\n";
+    // cout << " Address Value \n";
+    // auto pc = &pa;
+    // cout << (*pc)[0](av, 3) << ": " << *(*pc)[0](av, 3) << endl;
+    // const double *(*(*pd)[3]) (const double *, int) = &pa;
+    // const double *pdb = (*pd)[1](av, 3);
+    // cout << pdb << ": " << *pdb << endl;
 }
 
 long double probability(unsigned numbers, unsigned picks){
