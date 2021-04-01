@@ -21,6 +21,6 @@ Chapter 7.8
 
 Chapter 7 on 2/22/2021
 
-Chapter 8
+Chapter 8 with iterator
 
 
