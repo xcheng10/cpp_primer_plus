@@ -35,18 +35,20 @@ int main(){
     // display(one);
     // cout << "Homework 8" << endl;
 
-    stringy beany;
-    char testing[] = "Reality isn't what it used to be.";
 
-    set(beany, testing);
-    show(beany);
-    show(beany, 2);
-    testing[0] = 'D';
-    testing[1] = 'u';
-    show(testing);
-    show(testing, 3);
-    show("Done!");
-    return 0;
+    // // Q4
+    // stringy beany;
+    // char testing[] = "Reality isn't what it used to be.";
+
+    // set(beany, testing);
+    // show(beany);
+    // show(beany, 2);
+    // testing[0] = 'D';
+    // testing[1] = 'u';
+    // show(testing);
+    // show(testing, 3);
+    // show("Done!");
+    // return 0;
 }
 
 void display(const box& b){
@@ -85,5 +87,10 @@ void show(const char* _str, int n){
         cout << endl;
     }
 }
+
+
+
+
+
 
 
