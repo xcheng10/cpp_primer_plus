@@ -18,7 +18,7 @@ int support(){
 
 void update(double dt){
     // extern double warming;
-    ::warming += dt; // 和12行意义一样
+    ::warming += dt; // 和上面一行意义一样，表示是外部链接
     cout << "Updating warming to " << warming << endl;
 }
 
