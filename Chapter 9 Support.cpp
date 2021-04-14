@@ -2,10 +2,18 @@
 
 using namespace std;
 
-extern double warming; //使用外部定义变量warming
-
+int support();
 void update(double dt);
 void local();
+
+extern double warming; //使用外部定义变量warming
+
+static int errors = 30; // known to this file only
+
+int support(){
+    cout << errors << endl;
+    return 0;
+}
 
 
 void update(double dt){
