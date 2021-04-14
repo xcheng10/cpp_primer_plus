@@ -9,8 +9,8 @@ void local();
 
 
 void update(double dt){
-    extern double warming;
-    warming += dt;
+    // extern double warming;
+    ::warming += dt; // 和12行意义一样
     cout << "Updating warming to " << warming << endl;
 }
 
