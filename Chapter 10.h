@@ -1,13 +1,60 @@
 #ifndef CHAPTER_10_H_
 #define CHAPTER_10_H_
 
+#include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
+typedef unsigned long Item;
+
+class Stack{
+    private:
+        static const int max = 10;
+        Item items[max];
+        int top;
+    public:
+        Stack(){
+            top = 0;
+        };
+
+        ~Stack(){
+        };
+
+        bool isempty() const {
+            return top == 0;
+        };
+
+        bool isfull() const {
+            return top == max;
+        };
+
+        bool push(const Item &item){
+            if (top < max){
+                items[top++] = item;
+                return true;
+            } else{
+                return false;
+            }
+        }; // return false if full
+
+        Item pop(Item &item){
+            if (top > 0){
+                item = items[--top];
+                // cout << item << endl;
+                return item;
+            } else {
+                return false;
+            }
+        }; // return false if null
+};
+
+
+
 class Stock{
     private:
+        static const int Month = 12; //类中定义常量，而且不存储在对象中，所以可以被所有对象共享
         string company;
         long shares;
         double share_val;
@@ -24,7 +71,7 @@ class Stock{
         void buy(long num, double price);
         void sell(long num, double price);
         void update(double price);
-        void show();
+        void show() const;
         const Stock& topval(const Stock& s) const;
 };
 
