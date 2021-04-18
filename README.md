@@ -29,4 +29,6 @@ HW 8 on 4/7/2021
 
 Chapter 10 Finished on 4/15/2021
 
+Chapter 11 finished on 4/18/2021
+
 
