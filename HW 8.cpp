@@ -36,7 +36,7 @@ int main(){
     // cout << "Homework 8" << endl;
 
 
-    // // Q4
+    // // Q4:
     // stringy beany;
     // char testing[] = "Reality isn't what it used to be.";
 
