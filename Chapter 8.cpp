@@ -8,7 +8,7 @@
 
 using namespace std;
 
-//an inline function definition
+//an inline function definition;
 inline double square(double x) {return x * x;};
 void swapr(int &a, int &b);
 void swapp(int *p, int *q);
