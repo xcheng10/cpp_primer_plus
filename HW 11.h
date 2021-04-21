@@ -14,19 +14,35 @@ using namespace std;
 namespace complex{
     class Complex{
         private:
+            static int total;
             double real;
             double imaginary;
         public:
+            // double real;
+            // double imaginary;
             Complex(){
                 real = imaginary = 0.0;
+                total++;
             };
 
-            Complex(double a, double b){
-                real = a;
-                imaginary = b;
+            Complex(const Complex &c){
+                real = c.real;
+                imaginary = c.imaginary;
+                total++;
+            };
+
+            // 初始化列表而不是赋值
+            Complex(double a, double b): real(a), imaginary(b){
+                total++;
             };
 
             ~Complex(){
+                total--;
+            };
+
+            static int getCount(){
+                cout << total << endl;
+                return total;
             };
         
             //运算符重载

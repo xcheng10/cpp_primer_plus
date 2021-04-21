@@ -6,6 +6,8 @@ using namespace complex;
 
 int bitcal(int& a, int& n);
 
+int Complex::total = 0;
+
 int main(){
     // short a = -15;
     // a >>= 3;
@@ -30,7 +32,7 @@ int main(){
     cout << a - b << "\n";
     cout << a * b << "\n";
     cout << ~a << "\n";
-
+    a.getCount();
 
     return 0;
 }
@@ -40,4 +42,3 @@ int bitcal(int& a, int& n){
     temp &= 1;
     return temp;
 };
-
