@@ -1,4 +1,4 @@
-# cpp_primer_plus
+# CPP Primer Plus Sixth Edition
 C++ Primer Plus Notes and Homework
 
 Chapter 2 Homework Finished
