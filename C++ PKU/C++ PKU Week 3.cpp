@@ -33,6 +33,51 @@ class A{
         }
 };
 
+class Sample{
+public:
+    int v;
+    
+    Sample(int n): v(n){
+    };
+
+    // 复制构造函数
+    Sample(Sample & s){
+        v = 2 * s.v;
+    };
+
+    ~Sample(){
+
+    };
+};
+
+class Base{
+public:
+    int k;
+    Base(){
+        k = 0;
+    };
+    ~Base(){};
+    Base(int n):k(n){
+    };
+};
+
+class Big{
+public:
+    int v;
+    Base b;
+    Big(){
+        v = 0;
+    };
+    Big(int n):v(n),b(n){};
+    ~Big(){};
+    Big(Big &t){
+        v = t.v;
+        b.k = t.b.k;
+    }
+};
+
+
+
 
 int main(){
     //     A * p = NULL;
@@ -46,11 +91,24 @@ int main(){
     // p -> v = 4;
     // delete p;
 
-    A a;
-    cout << a.val << endl; // output 0
-    // a = 5;
-    a.getObj() = 5;
-    cout << a.val << endl; // output 5
+    // HW Q1
+    // A a;
+    // cout << a.val << endl; // output 0
+    // // a = 5;
+    // a.getObj() = 5;
+    // cout << a.val << endl; // output 5
+
+    // HW Q2
+    // Sample a(5);
+    // Sample b = a;
+    // cout << b.v << endl;
+
+    // HW Q3
+    Big a1(5);
+    Big a2 = a1;
+    cout << a1.v << ", " << a1.b.k << endl;
+    cout << a2.v << ", " << a2.b.k << endl;
+    
 
     return 0;
 }
