@@ -14,8 +14,8 @@
             "cwd": "/Users/xcheng/Google Drive (xcheng10@illinois.edu)/Rich Forever/Documents/Code/cppTraining/",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "lldb"
-            //"targetArchitecture": "x86_64"
+            "MIMode": "lldb",
+            "targetArchitecture": "x86_64"
         }
     ]
 }
