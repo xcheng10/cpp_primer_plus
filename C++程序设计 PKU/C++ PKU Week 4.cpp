@@ -240,7 +240,7 @@ int main(){
     Complex a, b;
     a = "3+4i";
     a.Print();
-    b = "-5-6i";
+    b = "-8-6i";
     b.Print();
 
     return 0;

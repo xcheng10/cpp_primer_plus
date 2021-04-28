@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "ostream": "cpp"
+    },
+    "editor.showFoldingControls": "always",
+    "editor.foldingStrategy": "indentation"
+}
