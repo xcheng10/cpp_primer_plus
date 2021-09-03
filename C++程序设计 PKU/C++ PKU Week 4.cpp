@@ -195,21 +195,70 @@ class Complex{
 
     void Print(){
         if (r > 0){
-        cout << r << "+" << i << "i" << endl;
+            cout << r << "+" << i << "i" << endl;
         } else {
-        cout << r << "-" << i << "i" << endl;
+            cout << r << "-" << i << "i" << endl;
         };
     }
 };
 
 class MyInt {
     int nVal;
-public:
-    MyInt(int n) { nVal = n; }
-    int ReturnVal() { return nVal; }
-// 在此处补充你的代码
+    public:
+        MyInt(int n) {
+            nVal = n;
+        }
+        int ReturnVal() {
+            return nVal;
+        }
+    // 在此处补充你的代码
+
+        MyInt operator- (const int &a){
+            nVal -= a;
+            return *this;
+        }
 };
-int main () {
+
+
+
+int main(){
+// Week 1
+//     String s;
+//     // String s2 = "hello" // 报错因为这是一个初始化语句，而且不会去调用operator =函数，而是会调用构造函数，so far没有相关构造函数
+//     s = "Good luck"; // same as s.operator=("Good luck")
+//     cout << s.c_str() << endl;
+//     s = "Good Morning";
+//     cout << s.c_str() << endl;
+//
+//     String s1, s2;
+//     s1 = "Hello";
+//     s2 = "World";
+//     cout << s1.c_str() << " " << s2.c_str() << endl;
+//     s1 = s2;
+//     s2 = "New";
+//     cout << s1.c_str() << " " << s2.c_str() << endl;
+
+
+// Week 2
+//     CArray a;
+//     for (int i = 0; i < 5; i++){
+//         a.push_back(i);
+//     }
+//
+//     CArray a2, a3;
+//     a2 = a;
+//     for (int i = 0; i < a.length(); i++){
+//         cout << a2[i] << endl;
+//     };
+
+// Week 4
+//    Complex a, b;
+//    a = "3+4i";
+//    a.Print();
+//    b = "-8-6i";
+//    b.Print();
+
+
     MyInt objInt(10);
     objInt-2-1-3;
     cout << objInt.ReturnVal();
@@ -217,46 +266,6 @@ int main () {
     objInt-2-1;
     cout << objInt.ReturnVal();
     return 0;
-}
-
-
-
-int main(){
-// Week 1
-    // String s;
-    // // String s2 = "hello" // 报错因为这是一个初始化语句，而且不会去调用operator =函数，而是会调用构造函数，so far没有相关构造函数
-    // s = "Good luck"; // same as s.operator=("Good luck")
-    // cout << s.c_str() << endl;
-    // s = "Good Morning";
-    // cout << s.c_str() << endl;
-
-    // String s1, s2;
-    // s1 = "Hello";
-    // s2 = "World";
-    // cout << s1.c_str() << " " << s2.c_str() << endl;
-    // s1 = s2;
-    // s2 = "New";
-    // cout << s1.c_str() << " " << s2.c_str() << endl;
-
-
-// Week 2
-    // CArray a;
-    // for (int i = 0; i < 5; i++){
-    //     a.push_back(i);
-    // }
-
-    // CArray a2, a3;
-    // a2 = a;
-    // for (int i = 0; i < a.length(); i++){
-    //     cout << a2[i] << endl;
-    // };
-
-// HW
-    Complex a, b;
-    a = "3+4i";
-    a.Print();
-    b = "-8-6i";
-    b.Print();
 
     return 0;
 }
