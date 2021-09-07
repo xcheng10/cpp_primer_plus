@@ -219,12 +219,56 @@ class MyInt {
         }
 };
 
+// 在此处补充你的代码
+class Array2 {
+    int li;
+    int lo;
+    int **inside;
+
+    public:
+        Array2(const int a = 0, const int b = 0){
+            lo = a;
+            li = b;
+            inside = new int *[lo];
+
+            for (int i = 0; i < lo; ++i) {
+                inside[i] = new int[li];
+            }
+        };
+
+//        ~Array2(){
+//            if (inside) {
+//                delete [] inside;
+//            }
+//        };
+
+        Array2 & operator = (const Array2 &a){
+            if (inside == a.inside){
+                return *this;
+            } else if (inside){
+                delete inside;
+            };
+            inside = a.inside;
+            return *this;
+        };
+
+        int * operator [] (int a){
+            return inside[a];
+        }
+
+        int operator () (const int a, const int b){
+            return inside[a][b];
+        };
+
+
+
+};
 
 
 int main(){
 // Week 1
 //     String s;
-//     // String s2 = "hello" // 报错因为这是一个初始化语句，而且不会去调用operator =函数，而是会调用构造函数，so far没有相关构造函数
+//     // String s2 = "hello" // 报错因为这是一个初始化语句，而且不会去调用operator=函数，而是会调用构造函数，so far没有相关构造函数
 //     s = "Good luck"; // same as s.operator=("Good luck")
 //     cout << s.c_str() << endl;
 //     s = "Good Morning";
@@ -252,20 +296,45 @@ int main(){
 //     };
 
 // Week 4
+// Q1
 //    Complex a, b;
 //    a = "3+4i";
 //    a.Print();
 //    b = "-8-6i";
 //    b.Print();
 
+// Q2
+//    MyInt objInt(10);
+//    objInt-2-1-3;
+//    cout << objInt.ReturnVal();
+//    cout <<",";
+//    objInt-2-1;
+//    cout << objInt.ReturnVal();
 
-    MyInt objInt(10);
-    objInt-2-1-3;
-    cout << objInt.ReturnVal();
-    cout <<",";
-    objInt-2-1;
-    cout << objInt.ReturnVal();
-    return 0;
+//Q3
+    Array2 a(3,4);
+    int i,j;
+    for( i = 0; i < 3; ++i )
+        for( j = 0; j < 4; j ++ )
+            a[i][j] = i * 4 + j;
+
+
+    for( i = 0;i < 3; ++i ) {
+        for( j = 0; j < 4; j ++ ) {
+            cout << a(i,j) << ",";
+        }
+        cout << endl;
+    }
+    cout << "next" << endl;
+    Array2 b;
+    b = a;
+    for( i = 0;i < 3; ++i ) {
+        for( j = 0; j < 4; j ++ ) {
+            cout << b[i][j] << ",";
+        }
+        cout << endl;
+    }
+
 
     return 0;
 }
