@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
+#include <vector>
 
 using namespace std;
 
@@ -221,12 +222,11 @@ class MyInt {
 
 // 在此处补充你的代码
 class Array2 {
-    int li;
-    int lo;
+    int li, lo;
     int **inside;
 
     public:
-        Array2(const int a = 0, const int b = 0){
+        Array2(int a = 0, int b = 0){
             lo = a;
             li = b;
             inside = new int *[lo];
@@ -234,38 +234,44 @@ class Array2 {
             for (int i = 0; i < lo; ++i) {
                 inside[i] = new int[li];
             }
+
+//            delete inside;
+//            cout << "freed 1" << endl;
         };
 
 //        ~Array2(){
-//            if (inside) {
-//                delete [] inside;
+//            if (inside){
+//                delete inside;
+//                cout << "freed" << endl;
 //            }
+//            delete inside;
+//            cout << "freed" << endl;
 //        };
 
         Array2 & operator = (const Array2 &a){
             if (inside == a.inside){
                 return *this;
-            } else if (inside){
-                delete inside;
+//            } else if (inside){
+//                cout << "freed 2" << endl;
+//                delete inside;
             };
+
             inside = a.inside;
             return *this;
         };
 
         int * operator [] (int a){
             return inside[a];
-        }
+        };
 
         int operator () (const int a, const int b){
             return inside[a][b];
         };
 
-
-
 };
 
 
-int main(){
+// int main(){
 // Week 1
 //     String s;
 //     // String s2 = "hello" // 报错因为这是一个初始化语句，而且不会去调用operator=函数，而是会调用构造函数，so far没有相关构造函数
@@ -281,8 +287,12 @@ int main(){
 //     s1 = s2;
 //     s2 = "New";
 //     cout << s1.c_str() << " " << s2.c_str() << endl;
+//     return 0;
+//     }
 
 
+
+//int main(){
 // Week 2
 //     CArray a;
 //     for (int i = 0; i < 5; i++){
@@ -295,6 +305,10 @@ int main(){
 //         cout << a2[i] << endl;
 //     };
 
+//     return 0;
+//     }
+
+int main(){
 // Week 4
 // Q1
 //    Complex a, b;
@@ -312,29 +326,78 @@ int main(){
 //    cout << objInt.ReturnVal();
 
 //Q3
-    Array2 a(3,4);
-    int i,j;
-    for( i = 0; i < 3; ++i )
-        for( j = 0; j < 4; j ++ )
-            a[i][j] = i * 4 + j;
+//    Array2 a(3,4);
+//    int i,j;
+//    for( i = 0; i < 3; ++i )
+//        for( j = 0; j < 4; j ++ )
+//            a[i][j] = i * 4 + j;
+//
+//
+//    for( i = 0;i < 3; ++i ) {
+//        for( j = 0; j < 4; j ++ ) {
+//            cout << a(i,j) << ",";
+//        }
+//        cout << endl;
+//    }
+//    cout << "next" << endl;
+//
+//    Array2 b;
+//    b = a;
+//    for( i = 0;i < 3; ++i ) {
+//        for( j = 0; j < 4; j ++ ) {
+//            cout << b[i][j] << ",";
+//        }
+//        cout << endl;
+//    };
 
 
-    for( i = 0;i < 3; ++i ) {
-        for( j = 0; j < 4; j ++ ) {
-            cout << a(i,j) << ",";
-        }
-        cout << endl;
-    }
-    cout << "next" << endl;
-    Array2 b;
-    b = a;
-    for( i = 0;i < 3; ++i ) {
-        for( j = 0; j < 4; j ++ ) {
-            cout << b[i][j] << ",";
-        }
-        cout << endl;
-    }
+
+
+
+////    dynamic array in C++
+////    https://leetcode.com/explore/learn/card/array-and-string/201/introduction-to-array/1146/
+//
+//    // 1. initialize
+//    vector<int> v0;
+//    vector<int> v1(5, 0);
+//    // 2. make a copy
+//    vector<int> v2(v1.begin(), v1.end());
+//    vector<int> v3(v2);
+//    // 2. cast an array to a vector
+//    int array[5] = {0, 1, 2, 3, 4};
+//    vector<int> v4(array, *(&array + 1));
+//    // 3. get length
+//    cout << "The size of v4 is: " << v4.size() << endl;
+//    // 4. access element
+//    cout << "The first element in v4 is: " << v4[0] << endl;
+//    // 5. iterate the vector
+//    cout << "[Version 1] The contents of v4 are:";
+//    for (int i = 0; i < v4.size(); ++i) {
+//        cout << " " << v4[i];
+//    };
+//    cout << endl;
+//    cout << "[Version 2] The contents of v4 are:";
+//    for (int& item : v4) {
+//        cout << " " << item;
+//    }
+//    cout << endl;
+//    cout << "[Version 3] The contents of v4 are:";
+//    for (auto item = v4.begin(); item != v4.end(); ++item) {
+//        cout << " " << *item;
+//    }
+//    cout << endl;
+//    // 6. modify element
+//    v4[0] = 5;
+//    // 7. sort
+//    sort(v4.begin(), v4.end());
+//    // 8. add new element at the end of the vector
+//    v4.push_back(-1);
+//    // 9. delete the last element
+//    v4.pop_back();
+
+
+
 
 
     return 0;
-}
+};
